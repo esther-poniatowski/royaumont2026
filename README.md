@@ -1,4 +1,4 @@
-<!-- Source of the published repository's README, copied by ../scripts/deploy-landing.sh without this
+<!-- Source of the published repository's README, copied by utils/scripts/deploy_landing.sh without this
      frontmatter. It is a pointer: the page at the URL below owns every statement about the work. -->
 # Posters at the Royaumont 2026 workshop
 
