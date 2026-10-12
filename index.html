@@ -1,0 +1,178 @@
+<!doctype html>
+<!--
+  FILE: manuscripts/2026-10_royaumont-workshop/landing/index.html
+  ==================================================================================================
+  The page that the QR code of BOTH Royaumont posters resolves to. Design record:
+  ../landing-strategy.md. Published by ../scripts/deploy-landing.sh, which refuses to publish a local
+  link whose target is absent from the deploy directory.
+
+  A SCAN DOES NOT SAY WHICH POSTER THE READER STANDS AT, so the page opens on one entry per poster,
+  each under the title and the subtitle or question printed on its sheet, and each poster has its own
+  section below.
+
+  ONE DOCUMENT, ONE ADDRESS. The supporting details, the extended abstract and the references of the
+  mixture poster are served by the CCN page (esther-poniatowski.github.io/ccn2026), so the mixture rows
+  link there instead of hosting second copies. The references of the symmetry lens exist nowhere else,
+  so they are owned here: the works cited on the sheet, in alphabetical order.
+
+  EVERY UNRESOLVED ITEM IS `pending' AND RENDERS AS PLAIN TEXT, NEVER AS A LINK. Its comment holds the
+  href to restore once the target exists in the published directory.
+
+  STYLE: the tokens and row shapes of the CCN page (petrol guide scheme, derived dark variant), with no
+  framework, web font or external request, since the network of the venue is the binding constraint.
+  ==================================================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royaumont 2026 — posters</title>
+<meta name="description" content="Posters, supporting material and references for two posters presented at the Royaumont 2026 workshop: how recurrent networks encode mixtures, and decomposing representations through task symmetries.">
+<style>
+  :root {
+    --bg: #F6F3EE; --surface: #FFFFFF; --border: #DDDAD5;
+    --text: #171E23; --text-2: #464E54; --text-3: #585F64;
+    --accent: #00454D; --badge-bg: #002D32; --badge-fg: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121819; --surface: #1A2224; --border: #2D3638;
+      --text: #EEF1F2; --text-2: #B2BABD; --text-3: #8F989B;
+      --accent: #6CC4CC; --badge-bg: #4FAAB3; --badge-fg: #0B1213;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 1.5rem 1.15rem 4rem;
+    background: var(--bg); color: var(--text);
+    font: 1rem/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 .35rem; letter-spacing: -.01em; }
+  .meeting { color: var(--text-2); font-size: 1rem; margin: 0 0 1.1rem; }
+  .byline { color: var(--text-2); font-size: .95rem; margin: 0 0 .2rem; }
+  .affil { color: var(--text-3); font-size: .85rem; margin: 0; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0 0; }
+  h2 {
+    font-size: .78rem; text-transform: uppercase; letter-spacing: .09em;
+    color: var(--text-3); margin: 2.4rem 0 .3rem; font-weight: 600;
+  }
+  /* A poster section opens on the title printed on its sheet, in reading case and body ink, so that
+     a reader recognizes the poster in front of them. */
+  h2.poster { font-size: 1.2rem; text-transform: none; letter-spacing: -.01em; color: var(--text); margin-bottom: .15rem; }
+  .deck { color: var(--text-2); margin: 0 0 .8rem; }
+  .hint { color: var(--text-3); font-size: .9rem; margin: .9rem 0 .5rem; }
+  /* The chooser is navigation: one surface panel, one entry per poster. */
+  .choose {
+    background: var(--surface); border: 1px solid var(--border); border-radius: .6rem;
+    padding: 0 .9rem; margin: 1.6rem 0 0;
+  }
+  .choose h2 { margin: .9rem 0 0; }
+  .choose li, .choose li:first-child { border-top: 0; border-bottom: 1px solid var(--border); }
+  .choose li:last-child { border-bottom: 0; }
+  .choose .entry { display: block; padding: .7rem 0; text-decoration: none; color: var(--text); }
+  .choose .entry .title { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { border-bottom: 1px solid var(--border); }
+  li:first-child { border-top: 1px solid var(--border); }
+  /* One row shape for every resource, whether it is a link or still pending. */
+  .row {
+    display: flex; align-items: center; gap: .85rem;
+    padding: .85rem .55rem; min-height: 3rem;
+    text-decoration: none; color: var(--text);
+  }
+  a.row:hover, a.row:focus-visible { background: var(--surface); }
+  a.row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  a.row .title { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  .title { display: block; }
+  .sub { display: block; font-size: .82rem; color: var(--text-3); margin-top: .15rem; }
+  .badge {
+    flex: 0 0 auto; width: 1.85rem; height: 1.85rem; border-radius: .42rem;
+    background: var(--badge-bg); color: var(--badge-fg);
+    display: grid; place-items: center; font-size: .95rem; font-weight: 600;
+  }
+  .label { flex: 1 1 auto; }
+  .pending .label, .pending .title { color: var(--text-3); }
+  .pending .badge { background: transparent; color: var(--text-3); border: 1px solid var(--border); }
+  .tag {
+    flex: 0 0 auto; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--text-3); border: 1px solid var(--border); border-radius: .8rem; padding: .12rem .5rem;
+  }
+  /* References are read on the page, so they take a text shape rather than the row shape. */
+  .refs li { padding: .75rem .55rem; font-size: .92rem; line-height: 1.5; color: var(--text-2); }
+  .refs .who { color: var(--text); font-weight: 600; }
+  .refs .venue { font-style: italic; }
+  .refs a { color: var(--accent); text-underline-offset: 2px; }
+  footer { color: var(--text-3); font-size: .85rem; margin-top: 2.6rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Posters at the Royaumont 2026 workshop</h1>
+  <p class="meeting"><em>Global brain dynamics and the shaping of mental representations</em>,
+    Abbaye de Royaumont, 14–16 October 2026</p>
+  <p class="byline">Esther Poniatowski &middot; Claire Sergent</p>
+  <p class="affil">Integrative Neuroscience and Cognition Center (INCC), CNRS UMR 8002, Université Paris Cité</p>
+  <hr>
+
+  <nav class="choose" aria-labelledby="choose">
+    <h2 id="choose">Choose a poster</h2>
+    <ul>
+      <li><a class="entry" href="#mixture"><span class="title">How do RNNs encode mixtures?</span><span class="sub">One network yields distinct geometries</span></a></li>
+      <li><a class="entry" href="#symmetry"><span class="title">Decomposing representations through task symmetries</span><span class="sub">How is the structure of a task reflected in the structure of representations?</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- ================================ MIXTURE-INPUT ENCODING ================================ -->
+  <h2 class="poster" id="mixture">How do RNNs encode mixtures?</h2>
+  <p class="deck">One network yields distinct geometries.</p>
+  <ul>
+    <li><a class="row" href="poster-mixture.pdf"><span class="badge">&#8595;</span><span class="label"><span class="title">Poster</span><span class="sub">the A0 sheet presented at the workshop</span></span><span class="tag">PDF</span></a></li>
+    <li><a class="row" href="https://esther-poniatowski.github.io/ccn2026/#details"><span class="badge">&#8599;</span><span class="label"><span class="title">Supporting details</span><span class="sub">the model, its assumptions, derivations and implications</span></span><span class="tag">CCN page</span></a></li>
+    <li><a class="row" href="https://openreview.net/forum?id=ix8hv1OnaB&amp;noteId=ix8hv1OnaB"><span class="badge">&#8599;</span><span class="label"><span class="title">Extended abstract</span><span class="sub">the four-page account presented at CCN 2026</span></span><span class="tag">OpenReview</span></a></li>
+    <li><a class="row" href="https://esther-poniatowski.github.io/ccn2026/#references"><span class="badge">&#8599;</span><span class="label"><span class="title">References</span><span class="sub">the works cited on the poster and in the abstract</span></span><span class="tag">CCN page</span></a></li>
+  </ul>
+
+  <!-- ===================================== SYMMETRY LENS ==================================== -->
+  <h2 class="poster" id="symmetry">Decomposing representations through task symmetries</h2>
+  <p class="deck">How is the structure of a task reflected in the structure of representations?</p>
+  <ul>
+    <li><a class="row" href="poster-symmetry.pdf"><span class="badge">&#8595;</span><span class="label"><span class="title">Poster</span><span class="sub">the A0 sheet presented at the workshop</span></span><span class="tag">PDF</span></a></li>
+    <!-- pending: restore href="supplement-symmetry.pdf" once the supplement is in the published directory -->
+    <li><span class="row pending"><span class="badge">&#8595;</span><span class="label"><span class="title">Supplement and proofs</span><span class="sub">in preparation</span></span></span></li>
+  </ul>
+  <p class="hint" id="symmetry-references">References cited on the poster, in alphabetical order:</p>
+  <ul class="refs">
+    <li><span class="who">Bernardi, Benna, Rigotti, Munuera, Fusi &amp; Salzman (2020).</span>
+      The geometry of abstraction in the hippocampus and prefrontal cortex.
+      <span class="venue">Cell</span> 183(4), 954–967.
+      <a href="https://doi.org/10.1016/j.cell.2020.09.031">doi.org/10.1016/j.cell.2020.09.031</a></li>
+    <li><span class="who">Kriegeskorte, Mur &amp; Bandettini (2008).</span>
+      Representational similarity analysis – connecting the branches of systems neuroscience.
+      <span class="venue">Frontiers in Systems Neuroscience</span> 2, 4.
+      <a href="https://doi.org/10.3389/neuro.06.004.2008">doi.org/10.3389/neuro.06.004.2008</a></li>
+    <!-- pending: the record is not yet in the bibliography; once verified, restore
+         <a href="https://doi.org/10.1126/science.abm0204">doi.org/10.1126/science.abm0204</a> -->
+    <li><span class="who">Xie et al. (2022).</span>
+      Geometry of sequence working memory in macaque prefrontal cortex.
+      <span class="venue">Science</span> 375(6581), 632–639.</li>
+  </ul>
+
+  <!-- ======================================== CONTACT ======================================= -->
+  <h2 id="contact">Contact</h2>
+  <ul>
+    <li><a class="row" href="mailto:esther.poniatowski@ens.psl.eu"><span class="badge">&#9993;</span><span class="label"><span class="title">esther.poniatowski@ens.psl.eu</span></span></a></li>
+    <li><a class="row" href="https://www.linkedin.com/in/esther-poniatowski/"><span class="badge">&#8599;</span><span class="label"><span class="title">Esther Poniatowski — LinkedIn</span></span></a></li>
+    <li><a class="row" href="https://sergent-consciousness-lab.u-paris.fr/"><span class="badge">&#8599;</span><span class="label"><span class="title">Sergent Consciousness Lab</span><span class="sub">the laboratory where the work was carried out</span></span></a></li>
+  </ul>
+
+  <footer>
+    <p>Posters presented at the workshop <em>Global brain dynamics and the shaping of mental
+      representations</em>, Abbaye de Royaumont, 2026.</p>
+  </footer>
+
+</main>
+</body>
+</html>
