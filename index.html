@@ -3,7 +3,7 @@
   FILE: artifacts/royaumont2026_landing-page/landing/index.html
   ==================================================================================================
   The page that the QR code of BOTH Royaumont posters resolves to. Design record:
-  ../landing-strategy.md. Published by utils/scripts/deploy_landing.sh from ../landing.conf, which refuses to publish a local
+  ../decisions/ and docs/practice/posters/qr-code-generation.md. Published by utils/scripts/deploy_landing.sh from ../landing.conf, which refuses to publish a local
   link whose target is absent from the deploy directory.
 
   A SCAN DOES NOT SAY WHICH POSTER THE READER STANDS AT, so the page opens on one entry per poster,
@@ -12,11 +12,8 @@
 
   ONE DOCUMENT, ONE ADDRESS. The supporting details, the extended abstract and the references of the
   mixture poster are served by the CCN page (esther-poniatowski.github.io/ccn2026), so the mixture rows
-  link there instead of hosting second copies. The references of the symmetry lens exist nowhere else,
-  so they are owned here: the works cited on the sheet, in alphabetical order.
-
-  EVERY UNRESOLVED ITEM IS `pending' AND RENDERS AS PLAIN TEXT, NEVER AS A LINK. Its comment holds the
-  href to restore once the target exists in the published directory.
+  link there instead of hosting second copies. The bibliography of the symmetry lens exists nowhere
+  else, so this page owns its sources for benchmarks, mathematical tools and scientific precedents.
 
   STYLE: the tokens and row shapes of the CCN page (petrol guide scheme, derived dark variant), with no
   framework, web font or external request, since the network of the venue is the binding constraint.
@@ -140,24 +137,68 @@
   <p class="deck">How is the structure of a task reflected in the structure of representations?</p>
   <ul>
     <li><a class="row" href="poster-symmetry.pdf"><span class="badge">&#8595;</span><span class="label"><span class="title">Poster</span><span class="sub">the A0 sheet presented at the workshop</span></span><span class="tag">PDF</span></a></li>
-    <!-- pending: restore href="supplement-symmetry.pdf" once the supplement is in the published directory -->
-    <li><span class="row pending"><span class="badge">&#8595;</span><span class="label"><span class="title">Supplement and proofs</span><span class="sub">in preparation</span></span></span></li>
   </ul>
-  <p class="hint" id="symmetry-references">References cited on the poster, in alphabetical order:</p>
+  <p class="hint" id="symmetry-references">Sources for the benchmark tasks, mathematical tools and scientific precedents, in alphabetical order:</p>
   <ul class="refs">
+    <li><span class="who">Alleman, Lindsey &amp; Fusi (2024).</span>
+      Task structure and nonlinearity jointly determine learned representational geometry.
+      <span class="venue">International Conference on Learning Representations</span>.
+      <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/713051bc96d98f3a8e35a27823bf2813-Abstract-Conference.html">conference record</a></li>
     <li><span class="who">Bernardi, Benna, Rigotti, Munuera, Fusi &amp; Salzman (2020).</span>
       The geometry of abstraction in the hippocampus and prefrontal cortex.
-      <span class="venue">Cell</span> 183(4), 954–967.
+      <span class="venue">Cell</span> 183(4), 954–967.e21.
       <a href="https://doi.org/10.1016/j.cell.2020.09.031">doi.org/10.1016/j.cell.2020.09.031</a></li>
+    <li><span class="who">Britten, Shadlen, Newsome &amp; Movshon (1992).</span>
+      The analysis of visual motion: a comparison of neuronal and psychophysical performance.
+      <span class="venue">Journal of Neuroscience</span> 12(12), 4745–4765.
+      <a href="https://doi.org/10.1523/JNEUROSCI.12-12-04745.1992">doi.org/10.1523/JNEUROSCI.12-12-04745.1992</a></li>
+    <li><span class="who">Cho &amp; Saul (2009).</span>
+      Kernel methods for deep learning.
+      <span class="venue">Advances in Neural Information Processing Systems</span> 22.
+      <a href="https://proceedings.neurips.cc/paper/2009/hash/5751ec3e9a4feab575962e78e006250d-Abstract.html">conference record</a></li>
+    <li><span class="who">Daniely, Frostig &amp; Singer (2016).</span>
+      Toward deeper understanding of neural networks: the power of initialization and a dual view on expressivity.
+      <span class="venue">Advances in Neural Information Processing Systems</span> 29.
+      <a href="https://papers.nips.cc/paper_files/paper/2016/hash/abea47ba24142ed16b7d8fbf2c740e0d-Abstract.html">conference record</a></li>
+    <li><span class="who">Diedrichsen &amp; Kriegeskorte (2017).</span>
+      Representational models: a common framework for understanding encoding, pattern-component, and representational-similarity analysis.
+      <span class="venue">PLOS Computational Biology</span> 13(4), e1005508.
+      <a href="https://doi.org/10.1371/journal.pcbi.1005508">doi.org/10.1371/journal.pcbi.1005508</a></li>
+    <li><span class="who">Flesch, Juechems, Dumbalska, Saxe &amp; Summerfield (2022).</span>
+      Orthogonal representations for robust context-dependent task performance in brains and neural networks.
+      <span class="venue">Neuron</span> 110(7), 1258–1270.e11.
+      <a href="https://doi.org/10.1016/j.neuron.2022.01.005">doi.org/10.1016/j.neuron.2022.01.005</a></li>
+    <li><span class="who">Higgins, Racanière &amp; Rezende (2022).</span>
+      Symmetry-based representations for artificial and biological general intelligence.
+      <span class="venue">Frontiers in Computational Neuroscience</span> 16, 836498.
+      <a href="https://doi.org/10.3389/fncom.2022.836498">doi.org/10.3389/fncom.2022.836498</a></li>
     <li><span class="who">Kriegeskorte, Mur &amp; Bandettini (2008).</span>
       Representational similarity analysis – connecting the branches of systems neuroscience.
       <span class="venue">Frontiers in Systems Neuroscience</span> 2, 4.
       <a href="https://doi.org/10.3389/neuro.06.004.2008">doi.org/10.3389/neuro.06.004.2008</a></li>
-    <!-- pending: the record is not yet in the bibliography; once verified, restore
-         <a href="https://doi.org/10.1126/science.abm0204">doi.org/10.1126/science.abm0204</a> -->
+    <li><span class="who">Mante, Sussillo, Shenoy &amp; Newsome (2013).</span>
+      Context-dependent computation by recurrent dynamics in prefrontal cortex.
+      <span class="venue">Nature</span> 503(7474), 78–84.
+      <a href="https://doi.org/10.1038/nature12742">doi.org/10.1038/nature12742</a></li>
+    <li><span class="who">Rigotti et al. (2013).</span>
+      The importance of mixed selectivity in complex cognitive tasks.
+      <span class="venue">Nature</span> 497(7451), 585–590.
+      <a href="https://doi.org/10.1038/nature12160">doi.org/10.1038/nature12160</a></li>
+    <li><span class="who">Serre (1977).</span>
+      <span class="venue">Linear Representations of Finite Groups</span>. Graduate Texts in Mathematics 42. Springer.
+      <a href="https://doi.org/10.1007/978-1-4684-9458-7">doi.org/10.1007/978-1-4684-9458-7</a></li>
+    <li><span class="who">Williams (1997).</span>
+      Computing with infinite networks.
+      <span class="venue">Advances in Neural Information Processing Systems</span> 9.
+      <a href="https://papers.nips.cc/paper_files/paper/1996/hash/ae5e3ce40e0404a45ecacaaf05e5f735-Abstract.html">conference record</a></li>
     <li><span class="who">Xie et al. (2022).</span>
       Geometry of sequence working memory in macaque prefrontal cortex.
-      <span class="venue">Science</span> 375(6581), 632–639.</li>
+      <span class="venue">Science</span> 375(6581), 632–639.
+      <a href="https://doi.org/10.1126/science.abm0204">doi.org/10.1126/science.abm0204</a></li>
+    <li><span class="who">Yang, Joglekar, Song, Newsome &amp; Wang (2019).</span>
+      Task representations in neural networks trained to perform many cognitive tasks.
+      <span class="venue">Nature Neuroscience</span> 22(2), 297–306.
+      <a href="https://doi.org/10.1038/s41593-018-0310-2">doi.org/10.1038/s41593-018-0310-2</a></li>
   </ul>
 
   <!-- ======================================== CONTACT ======================================= -->
